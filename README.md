@@ -2,7 +2,7 @@
 
 This is the code for the following paper:
 
-Gül Varol, Javier Romero, Xavier Martin, Naureen Mahmood, Michael J. Black, Ivan Laptev and Cordelia Schmid, [Learning from Synthetic Humans](https://arxiv.org/abs/1701.01370), CVPR, 2017.
+Gül Varol, Javier Romero, Xavier Martin, Naureen Mahmood, Michael J. Black, Ivan Laptev and Cordelia Schmid, [Learning from Synthetic Humans](https://arxiv.org/abs/1701.01370), CVPR 2017.
 
 Check the [project page](http://www.di.ens.fr/willow/research/surreal/) for more materials.
 
@@ -149,5 +149,5 @@ If you use this code, please cite the following:
 }
 
 ## Acknowledgements
-The data generation code is built by Javier Romero, Gul Varol and Xavier Martin.
+The data generation code is built by [Javier Romero](https://github.com/libicocco/), [Gul Varol](https://github.com/gulvarol) and [Xavier Martin](https://github.com/xavier-martin).
 
