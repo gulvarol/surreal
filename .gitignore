@@ -1,0 +1,6 @@
+datageneration/smpl_data/
+datageneration/config
+*~
+*.py[cod]
+__pycache__/
+*.oso

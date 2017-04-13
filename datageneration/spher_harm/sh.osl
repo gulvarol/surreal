@@ -1,0 +1,39 @@
+shader sh_material(color Diffuse_Color = color(.6, .8, .6),
+                   float sh0 = 1.5,
+                   float sh1 = .5,
+                   float sh2 = .2,
+                   float sh3 = .1,
+                   float sh4 = .0,
+                   float sh5 = .0,
+                   float sh6 = .0,
+                   float sh7 = .0,
+                   float sh8 = .0,
+                   output color sh_color = color(.0, .0, .0)){
+    float C1 = 0.429043;
+    float C2 = 0.511664;
+    float C3 = 0.743125;
+    float C4 = 0.886227;
+    float C5 = 0.247708;
+
+    color L00 = color(sh0, sh0, sh0);
+    color L1m1 = color(sh1, sh1, sh1);
+    color L10 = color(sh2, sh2, sh2);
+    color L11 = color(sh3, sh3, sh3);
+    color L2m2 = color(sh4, sh4, sh4);
+    color L2m1 = color(sh5, sh5, sh5);
+    color L20 = color(sh6, sh6, sh6);
+    color L21 = color(sh7, sh7, sh7);
+    color L22 = color(sh8, sh8, sh8);
+
+    color kk  =  C1 * L22 * (N[0] * N[0] - N[1] * N[1]) +
+                 C3 * L20 * N[2] * N[2] +
+                 C4 * L00 -
+                 C5 * L20 +
+                 2.0 * C1 * L2m2 * N[0] * N[1] +
+                 2.0 * C1 * L21  * N[0] * N[2] +
+                 2.0 * C1 * L2m1 * N[1] * N[2] +
+                 2.0 * C2 * L11  * N[0] +
+                 2.0 * C2 * L1m1 * N[1] +
+                 2.0 * C2 * L10  * N[2];
+    sh_color  =  Diffuse_Color * kk;
+}

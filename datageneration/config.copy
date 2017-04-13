@@ -1,0 +1,20 @@
+[SYNTH_DATA]
+tmp_path           = '/home/gvarol/datasets/SURREAL/tmp/run0'
+output_path        = '/home/gvarol/datasets/SURREAL/out' # output folder
+bg_path            = '/sequoia/data2/gvarol/datasets/LSUN/data/img/'
+openexr_py2_path   = "/sequoia/data1/gvarol/tools/OpenEXR/OpenEXR-1.2.0/build/lib.linux-x86_64-2.7"
+
+output_types       = {'depth':True, 'fg':False, 'gtflow':False, 'normal':False, 'segm':True, 'vblur':False}
+
+smpl_data_folder   = 'smpl_data'
+smpl_data_filename = 'smpl_data.npz'
+clothing_option    = 'all' # grey, nongrey or all
+
+resy     = 320  # width
+resx     = 240  # height
+stepsize = 4    # subsampling MoCap sequence by selecting every 4th frame
+stride   = 50   # percent overlap between clips 
+clipsize = 100  # nFrames in each clip, where the random parameters are fixed
+
+
+
