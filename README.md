@@ -7,6 +7,12 @@ Gül Varol, Javier Romero, Xavier Martin, Naureen Mahmood, Michael J. Black, Iva
 Check the [project page](http://www.di.ens.fr/willow/research/surreal/) for more materials.
 
 Contact: [Gül Varol](http://www.di.ens.fr/~varol/).
+## Contents
+* [1. Download SURREAL dataset](https://github.com/gulvarol/surreal#1-download-surreal-dataset)
+* [2. Create your own synthetic data](https://github.com/gulvarol/surreal#2-create-your-own-synthetic-data)
+* [3. Training models](https://github.com/gulvarol/surreal#3-training-models)
+* [Citation](https://github.com/gulvarol/surreal#citation)
+* [Acknowledgements](https://github.com/gulvarol/surreal#acknowledgements)
 
 ## 1. Download SURREAL dataset
 In order to download SURREAL dataset, you need to accept the license terms. The links to license terms and download procedure are available here:
