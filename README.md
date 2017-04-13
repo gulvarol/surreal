@@ -12,6 +12,7 @@ Contact: [Gül Varol](http://www.di.ens.fr/~varol/).
 * [2. Create your own synthetic data](https://github.com/gulvarol/surreal#2-create-your-own-synthetic-data)
 * [3. Training models](https://github.com/gulvarol/surreal#3-training-models)
 * [Citation](https://github.com/gulvarol/surreal#citation)
+* [License](https://github.com/gulvarol/surreal#license)
 * [Acknowledgements](https://github.com/gulvarol/surreal#acknowledgements)
 
 ## 1. Download SURREAL dataset
@@ -153,6 +154,9 @@ If you use this code, please cite the following:
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JOURNAL =  {CVPR},  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YEAR = {2017}  
 }
+
+## License
+Please check the [license terms](https://github.com/gulvarol/surreal/blob/master/LICENSE.md) before downloading and/or using the code and the data. http://www.di.ens.fr/willow/research/surreal/data/license.html
 
 ## Acknowledgements
 The data generation code is built by [Javier Romero](https://github.com/libicocco/), [Gul Varol](https://github.com/gulvarol) and [Xavier Martin](https://github.com/xavier-martin).
