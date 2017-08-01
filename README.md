@@ -90,7 +90,7 @@ b) With the same credentials as with the SURREAL dataset, you can download the r
 smpl_data/
 ------------- textures/ # folder containing clothing images 
 ------------- (fe)male_beta_stds.npy
-------------- smpl_data.npz # 4GB
+------------- smpl_data.npz # 2.5GB
  # trans*           [T x 3]     - (T: number of frames in MoCap sequence)
  # pose*            [T x 72]    - SMPL pose parameters (T: number of frames in MoCap sequence)
  # maleshapes       [1700 x 10] - SMPL shape parameters for 1700 male scans
