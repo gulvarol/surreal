@@ -1,0 +1,5 @@
+https://lsh.paris.inria.fr/SURREAL/models/model_segm_png.t7
+https://lsh.paris.inria.fr/SURREAL/models/model_segm_mp4.t7
+https://lsh.paris.inria.fr/SURREAL/models/model_depth_png.t7
+https://lsh.paris.inria.fr/SURREAL/models/model_depth_mp4.t7
+

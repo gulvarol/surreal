@@ -1,5 +1,9 @@
-datageneration/smpl_data/
+datageneration/smpl_data/*.fbx
+datageneration/smpl_data/*.npy
+datageneration/smpl_data/*.npz
+datageneration/smpl_data/textures
 datageneration/config
+training/models/*.t7
 *~
 *.py[cod]
 __pycache__/
