@@ -58,12 +58,12 @@ SURREAL/data/
 #     joints2D     [2x24xT single] - 2D coordinates of 24 SMPL body joints on the image pixels
 #     joints3D     [3x24xT single] - 3D coordinates of 24 SMPL body joints in real world meters
 #     light        [9x100 single]  - spherical harmonics lighting coefficients
-#     pose         [72xT single]   - SMPL parameters
+#     pose         [72xT single]   - SMPL parameters (axis-angle)
 #     sequence     [char]          - <sequenceName>_c%04d
 #     shape        [10xT single]   - body shape parameters
 #     source       [char]          - 'cmu'
 #     stride       [1 uint8]       - percent overlap between clips, 30 or 50 or 70
-#     zrot         [Tx1 single]    - rotation in Z
+#     zrot         [Tx1 single]    - rotation in Z (euler angle)
 
 # *** T is the number of frames, mostly 100.
 
