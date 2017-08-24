@@ -194,7 +194,10 @@ To obtain the final results, you can run `./training/exp/eval.sh 1 30 cmu test`,
 
 We provide 4 pre-trained models for segmentation and depth, either trained using lossless renderings (png) or using the compressed videos (mp4).
 
+``` shell
+./download_models.sh /path/to/models yourusername yourpassword
 ```
+``` shell
 # model_segm_png.t7
 # model_segm_mp4.t7
 # model_depth_png.t7
