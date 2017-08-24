@@ -21,7 +21,7 @@ In order to download SURREAL dataset, you need to accept the license terms. The 
 
 https://www.di.ens.fr/willow/research/surreal/data/
 
-Once you receive the credentials to download the dataset, you will have a personal username and password. Use these either to download the whole dataset from [here: (SURREAL_v1.tar.gz, 86GB)](https://lsh.paris.inria.fr/SURREAL_v1.tar.gz) or download individual files with the `download/download_surreal.sh` script as follows:
+Once you receive the credentials to download the dataset, you will have a personal username and password. Use these either to download the whole dataset from [here: (SURREAL_v1.tar.gz, 86GB)](https://lsh.paris.inria.fr/SURREAL/SURREAL_v1.tar.gz) or download individual files with the `download/download_surreal.sh` script as follows:
 
 ``` shell
 ./download_surreal.sh /path/to/dataset yourusername yourpassword
@@ -90,7 +90,7 @@ b) With the same credentials as with the SURREAL dataset, you can download the r
 
 ``` shell
 smpl_data/
-------------- textures/ # folder containing clothing images (also available at lsh.paris.inria.fr/smpl_data/textures.tar.gz)
+------------- textures/ # folder containing clothing images (also available at lsh.paris.inria.fr/SURREAL/smpl_data/textures.tar.gz)
 ------------- (fe)male_beta_stds.npy
 ------------- smpl_data.npz # 2.5GB
  # trans*           [T x 3]     - (T: number of frames in MoCap sequence)
