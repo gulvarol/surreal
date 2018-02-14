@@ -17,9 +17,7 @@ Contact: [Gül Varol](http://www.di.ens.fr/~varol/).
 * [Acknowledgements](https://github.com/gulvarol/surreal#acknowledgements)
 
 ## 1. Download SURREAL dataset
-```diff
-- The server is temporarily down. Check back on Monday 12 Feb 2018. Sorry for the inconvenience.
-```
+
 In order to download SURREAL dataset, you need to accept the license terms. The links to license terms and download procedure are available here:
 
 https://www.di.ens.fr/willow/research/surreal/data/
