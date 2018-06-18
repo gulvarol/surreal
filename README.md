@@ -223,7 +223,7 @@ You can also use `demo/demo.m` Matlab script to produce the visualizations in th
 
 You might want to do a partial download depending on your needs.
 
-| Dataset            | *_info.mat   | *.mp4 | *_segm.mat | *_depth.mat | *_flow.mat | Total|
+| Dataset            | *_info.mat   | *.mp4 | *_segm.mat | *_depth.mat | *_gtflow.mat | Total|
 | ------------------ |-------------:| -----:| ------:|-----:| ----:|----:|
 | **SURREAL (cmu)**  | 3.8G | 3.3G  | 6.0G  | 82.5G | 179G  | 275G  |
 
