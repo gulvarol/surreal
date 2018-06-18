@@ -12,7 +12,7 @@ password=${3:-'password'}
 
 for dataset in 'cmu'; do
     for setname in 'test' 'val' 'train'; do
-        for modality in '.mp4' '_info.mat' '_segm.mat' '_depth.mat'; do
+        for modality in '.mp4' '_info.mat' '_segm.mat' '_depth.mat' '_gtflow.mat'; do
         	echo 'Downloading '${dataset}' dataset '${setname}' set, files with '${modality}
             wget --user=${username} --password=${password} -m -q -i files/files_${dataset}_${setname}${modality}.txt --no-host-directories -P ${outdir}
         done

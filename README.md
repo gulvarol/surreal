@@ -1,12 +1,14 @@
 # Learning from Synthetic Humans (SURREAL)
 
-This is the code for the following paper:
+[Gül Varol](http://www.di.ens.fr/~varol/), [Javier Romero](https://ps.is.tuebingen.mpg.de/person/jromero/), [Xavier Martin](https://lear.inrialpes.fr/people/xmartin/), [Naureen Mahmood](https://ps.is.tuebingen.mpg.de/person/nmahmood), [Michael J. Black](https://ps.is.tuebingen.mpg.de/person/black), [Ivan Laptev](http://www.di.ens.fr/~laptev/) and [Cordelia Schmid](http://lear.inrialpes.fr/~schmid/),
+*Learning from Synthetic Humans*, CVPR 2017.
 
-Gül Varol, Javier Romero, Xavier Martin, Naureen Mahmood, Michael J. Black, Ivan Laptev and Cordelia Schmid, [Learning from Synthetic Humans](https://arxiv.org/abs/1701.01370), CVPR 2017.
+[[Project page]](http://www.di.ens.fr/willow/research/surreal/) [[arXiv]](https://arxiv.org/abs/1701.01370)
 
-Check the [project page](http://www.di.ens.fr/willow/research/surreal/) for more materials.
+<p align="center">
+<img src="http://www.di.ens.fr/willow/research/surreal/images/surreal.gif"
+</p>
 
-Contact: [Gül Varol](http://www.di.ens.fr/~varol/).
 ## Contents
 * [1. Download SURREAL dataset](https://github.com/gulvarol/surreal#1-download-surreal-dataset)
 * [2. Create your own synthetic data](https://github.com/gulvarol/surreal#2-create-your-own-synthetic-data)
@@ -22,7 +24,7 @@ In order to download SURREAL dataset, you need to accept the license terms. The 
 
 https://www.di.ens.fr/willow/research/surreal/data/
 
-Once you receive the credentials to download the dataset, you will have a personal username and password. Use these either to download the whole dataset from [here: (SURREAL_v1.tar.gz, 86GB)](https://lsh.paris.inria.fr/SURREAL/SURREAL_v1.tar.gz) or download individual files with the `download/download_surreal.sh` script as follows:
+Once you receive the credentials to download the dataset, you will have a personal username and password. Use these either to download the dataset excluding optical flow data from [here: (SURREAL_v1.tar.gz, 86GB)](https://lsh.paris.inria.fr/SURREAL/SURREAL_v1.tar.gz) or download individual files with the `download/download_surreal.sh` script as follows:
 
 ``` shell
 ./download_surreal.sh /path/to/dataset yourusername yourpassword
@@ -44,12 +46,14 @@ SURREAL/data/
 ----------------------------  run1/ #30% overlap
 ----------------------------  run2/ #70% overlap
 ------------------------------------  <sequenceName>/ #e.g. 01_01
---------------------------------------------------  <sequenceName>_c%04d.mp4       # RGB - 240x320 resolution video
---------------------------------------------------  <sequenceName>_c%04d_depth.mat # Depth
-#     depth_1, depth_2, ... depth_T [240x320 single] - in meters
---------------------------------------------------  <sequenceName>_c%04d_segm.mat  # Segmentation
-#     segm_1,   segm_2, ...  segm_T [240x320 uint8]  - 0 for background and 1..24 for SMPL body parts
---------------------------------------------------  <sequenceName>_c%04d_info.mat  # Remaining annotation
+--------------------------------------------------  <sequenceName>_c%04d.mp4        # RGB - 240x320 resolution video
+--------------------------------------------------  <sequenceName>_c%04d_depth.mat  # Depth
+#     depth_1,   depth_2, ...  depth_T [240x320 single] - in meters
+--------------------------------------------------  <sequenceName>_c%04d_segm.mat   # Segmentation
+#     segm_1,     segm_2, ...   segm_T [240x320 uint8]  - 0 for background and 1..24 for SMPL body parts
+--------------------------------------------------  <sequenceName>_c%04d_gtflow.mat # Ground truth optical flow
+#     gtflow_1, gtflow_2, ... gtflow_T [240x320x2 single]
+--------------------------------------------------  <sequenceName>_c%04d_info.mat   # Remaining annotation
 #     bg           [1xT cell]      - names of background image files
 #     camDist      [1 single]      - camera distance
 #     camLoc       [3x1 single]    - camera location
@@ -69,6 +73,8 @@ SURREAL/data/
 # *** T is the number of frames, mostly 100.
 
 ```
+
+*Note: There are some monster shapes in the dataset which were not cleaned before training. Some subjects spotted by visual inspection are `18`, `19`, `143_21`.*
 
 ## 2. Create your own synthetic data
 ### 2.1. Preparation
@@ -217,18 +223,21 @@ You can also use `demo/demo.m` Matlab script to produce the visualizations in th
 
 You might want to do a partial download depending on your needs.
 
-| Dataset            | *_info.mat   | *.mp4 | *_segm.mat | *_depth.mat | Total|
-| ------------------ |-------------:| -----:| ------:|-----:| ----:|
-| **SURREAL (cmu)**  | 3.8G | 3.3G  | 6.0G  | 82.5G  | 96G  |
+| Dataset            | *_info.mat   | *.mp4 | *_segm.mat | *_depth.mat | *_flow.mat | Total|
+| ------------------ |-------------:| -----:| ------:|-----:| ----:|----:|
+| **SURREAL (cmu)**  | 3.8G | 3.3G  | 6.0G  | 82.5G | 179G  | 275G  |
 
 ## Citation
 If you use this code, please cite the following:
-> @article{varol17a,  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TITLE = {Learning from Synthetic Humans},  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;AUTHOR = {Varol, G{\"u}l and Romero, Javier and Martin, Xavier and Mahmood, Naureen and Black, Michael J. and Laptev, Ivan and Schmid, Cordelia},  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;JOURNAL =  {CVPR},  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;YEAR = {2017}  
+
+```
+@INPROCEEDINGS{varol17_surreal,  
+  title     = {Learning from Synthetic Humans},  
+  author    = {Varol, G{\"u}l and Romero, Javier and Martin, Xavier and Mahmood, Naureen and Black, Michael J. and Laptev, Ivan and Schmid, Cordelia},  
+  booktitle = {CVPR},  
+  year      = {2017}  
 }
+```
 
 ## License
 Please check the [license terms](https://github.com/gulvarol/surreal/blob/master/LICENSE.md) before downloading and/or using the code, the models and the data. http://www.di.ens.fr/willow/research/surreal/data/license.html
@@ -236,5 +245,4 @@ Please check the [license terms](https://github.com/gulvarol/surreal/blob/master
 ## Acknowledgements
 The data generation code is built by [Javier Romero](https://github.com/libicocco/), [Gul Varol](https://github.com/gulvarol) and [Xavier Martin](https://github.com/martin-xavier).
 
-The training code is written by [Gul Varol](https://github.com/gulvarol) and is largely built on the ImageNet training example [https://github.com/soumith/imagenet-multiGPU.torch](https://github.com/soumith/imagenet-multiGPU.torch) by [Soumith Chintala](https://github.com/soumith/).
-
+The training code is written by [Gul Varol](https://github.com/gulvarol) and is largely built on the ImageNet training example [https://github.com/soumith/imagenet-multiGPU.torch](https://github.com/soumith/imagenet-multiGPU.torch) by [Soumith Chintala](https://github.com/soumith/), and [Stacked Hourglass Networks](https://github.com/umich-vl/pose-hg-train) by [Alejandro Newell](https://github.com/anewell).
