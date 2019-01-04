@@ -1,6 +1,6 @@
 # Example usage:
 # python smpl_relations.py \
-# --fileinfo /home/gvarol/datasets/SURREAL/data/cmu/train/run0/03_01/01_01_c0001_info.mat \
+# --fileinfo /home/gvarol/datasets/SURREAL/data/cmu/train/run0/01_01/01_01_c0001_info.mat \
 # --t_beg 0 --t_end 100
 
 import argparse
@@ -11,8 +11,8 @@ import numpy as np
 import os
 import scipy.io as sio
 import sys
+import transforms3d
 
-import rotations
 SMPL_PATH = os.getenv('SMPL_PATH', '../../')
 sys.path.append(SMPL_PATH)
 from smpl_webuser.serialization import load_model
@@ -65,12 +65,12 @@ def draw_joints2D(joints2D, ax=None, kintree_table=None, with_text=True, color='
 
 
 def rotateBody(RzBody, pelvisRotVec):
-    Rpelvis = rotations.rotvec2rotmat(pelvisRotVec)
+    angle = np.linalg.norm(pelvisRotVec)
+    Rpelvis = transforms3d.axangles.axangle2mat(pelvisRotVec / angle, angle)
     globRotMat = np.dot(RzBody, Rpelvis)
-    # R90 = rotations.euler2rotmat(np.array((np.pi / 2, np.pi / 2, 0)))
-    R90 = rotations.euler2rotmat(np.array((np.pi / 2, 0, 0)))
-    globRotVec = rotations.rotmat2rotvec(np.dot(R90, globRotMat))
-    # globRotVec = rotations.rotmat2rotvec(globRotMat)
+    R90 = transforms3d.euler.euler2mat(np.pi / 2, 0, 0)
+    globRotAx, globRotAngle = transforms3d.axangles.mat2axangle(np.dot(R90, globRotMat))
+    globRotVec = globRotAx * globRotAngle
     return globRotVec
 
 
