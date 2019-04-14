@@ -140,7 +140,7 @@ make
 make install
 
 # ffmpeg
-./configure --prefix=/home/gvarol/tools/ffmpeg/ffmpeg_build_sequoia_h264 --enable-avresample --enable-pic --disable-doc --disable-static --enable-shared --enable-gpl --enable-nonfree --enable-postproc --enable-x11grab --disable-yasm --enable-libx264 --extra-ldflags="-I/home/gvarol/tools/ffmpeg/x264_build/include -L/home/gvarol/tools/ffmpeg/x264_build/lib" --extra-cflags="-I/home/gvarol/tools/ffmpeg/x264_build/include"
+./configure --prefix=/home/gvarol/tools/ffmpeg/ffmpeg_build_sequoia_h264 --enable-avresample --enable-pic --disable-doc --disable-static --enable-shared --enable-gpl --enable-nonfree --enable-postproc --enable-libxcb --disable-yasm --enable-libx264 --extra-ldflags="-I/home/gvarol/tools/ffmpeg/x264_build/include -L/home/gvarol/tools/ffmpeg/x264_build/lib" --extra-cflags="-I/home/gvarol/tools/ffmpeg/x264_build/include"
 make
 make install
 ```
