@@ -126,7 +126,7 @@ You need to download [Blender](http://download.blender.org/release/) and install
 
 `get-pip.py` is downloaded from [pip](https://pip.pypa.io/en/stable/installing/). Replace the `blenderpath` with your own and set `BLENDER_PATH`.
 
-Otherwise, you might need to point to your system installation of python, but be prepared for unexpected surprises due to version mismatches. There may not be support about questions regarding this installation.
+*Known problem: Blender2.78a has problems with pip. You can try with new versions of Blender. Otherwise, you can install the dependencies such as `scipy` to a new python3.5 environment and add this environment's `site-packages` to `PYTHONPATH` before running Blender.*
 
 #### 2.1.4. FFMPEG
 If you want to save the rendered images as videos, you will need [ffmpeg](https://ffmpeg.org/) library. Build it and set the `FFMPEG_PATH` to the directory that contains `lib/` and `bin/` folders. Additionally, if you want to use H.264 codec as it is done in the current version of the code, you need to have the [x264](http://www.videolan.org/developers/x264.html) libraries compiled. In that case, set `X264_PATH` to your build. If you use another codec, you don't need `X264_PATH` variable and you can remove `-c:v h264` from `main_part1.py`.
@@ -147,6 +147,8 @@ make install
 
 #### 2.1.5. OpenEXR
 The file type for some of the temporary outputs from Blender will be EXR images. In order to read these images, the code uses [OpenEXR bindings for Python](http://www.excamera.com/sphinx/articles-openexr.html). These bindings are available for python 2, the second part of the code (`main_part2.py`) needs this library.
+
+*Note: OpenEXR now exists for python 3, therefore you can run `pip install openexr` and merge `main_part1.py` and `main_part2.py` to get rid of the python 2 requirements.*
 
 ### 2.2. Running the code
 Copy the `config.copy` into `config` and edit the `bg_path`, `tmp_path`, `output_path` and `openexr_py2_path` with your own paths.
