@@ -33,6 +33,7 @@ Once you receive the credentials to download the dataset, you will have a person
 You can check [Storage info](https://github.com/gulvarol/surreal#4-storage-info) for how much disk space they require and can do partial download.
 
 Find under `datageneration/misc/3Dto2D` scripts that explain the projective relations between joints2D and joints3D variables.
+And [here](https://github.com/gulvarol/surreal/issues/10#issuecomment-447336600), some issues about the joints are explained.
 
 The structure of the folders is as follows:
 
