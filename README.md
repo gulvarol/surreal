@@ -78,6 +78,9 @@ SURREAL/data/
 *Note: There are some monster shapes in the dataset which were not cleaned before training. Some subjects spotted by visual inspection are `18`, `19`, `143_21`.*
 
 ## 2. Create your own synthetic data
+
+*Note June 2021: Check the [surreact](https://github.com/gulvarol/surreact) repository for code that works with more recent versions of libraries (e.g., Blender 2.92).*
+ 
 ### 2.1. Preparation
 #### 2.1.1. SMPL data
 
